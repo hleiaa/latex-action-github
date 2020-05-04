@@ -18,7 +18,7 @@ If you are looking for instructions to build ConTeXt, have a look at the [ConTeX
 
 **Table of Contents**  
 
-- [Github Actions](#github-actions)
+- [GitHub Actions](#github-actions)
 - [Choose your build method](#choose-your-build-method)
   - [Tectonic](#tectonic)
   - [1. Docker image with Tectonic](#1-docker-image-with-tectonic)
