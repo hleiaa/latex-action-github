@@ -12,7 +12,7 @@ This repository contains an overview of the methods you could use to build your 
 You want that because then every time you push it will automatically check if you pushed valid LaTeX.
 
 If you are looking for instructions to build LaTeX locally, look [here](https://github.com/Ruben-Sten/TeXiFy-IDEA#installation-instructions).
-If you are looking for instructions to build LaTeX on GitLab CI, have a look at the [Gitlab](#gitlab) section.
+If you are looking for instructions to build LaTeX on GitLab CI, have a look at the [GitLab](#gitlab) section.
 If you are looking for instructions to build ConTeXt, have a look at the [ConTeXt](#context) section.
 
 
