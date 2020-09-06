@@ -9,4 +9,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: Compile
-        run: docker run --mount src=$GITHUB_WORKSPACE/travis-ci-latex-pdf/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
+        run: docker run --mount src=$GITHUB_WORKSPACE/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
