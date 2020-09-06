@@ -4,6 +4,7 @@
 [![Gitter](https://badges.gitter.im/travis-latexbuild/community.svg)](https://gitter.im/travis-latexbuild/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/Github%20Action%20for%20LaTeX%20by%20xu-cheng/badge.svg)
 ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/Compile%20a%20ConTeXt%20document/badge.svg)
+![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/dxjoke%20Tectonic%20Docker/badge.svg)
 <!-- ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/Compile%20LaTeX%20by%20vinay0410/badge.svg) -->
 
 Write LaTeX, push to git, let Travis automatically build your file and release a pdf automatically to GitHub releases when the commit was tagged.
