@@ -63,6 +63,9 @@ To use it:
 
 For more information, see https://help.github.com/en/actions/automating-your-workflow-with-github-actions
 
+In the following sections we will give an overview and comparison of available GitHub Actions to build LaTeX.
+Note however, that you can adapt any of the methods for using Travis CI to work with GitHub Actions, because the syntax for the yml configuration files is very similar.
+
 ## Docker image with full TeX Live
 
 Currently we know the following Actions.
@@ -101,6 +104,10 @@ No known advantages currently.
 ## Docker image with Tectonic
 
 The following Actions use Tectonic, which means they have the advantages and disadvantages of Tectonic as described [below](#tectonic)
+
+### Using the Docker image directly
+
+
 
 ### Compile LaTeX by vinay0410
 
@@ -142,7 +149,7 @@ Because it would be so much work figuring out what packages are needed, especial
 
 ### LaTeX linter (chktex) by j2kun
 
-# Choose your build method
+# Overview and comparison of methods to build LaTeX using Travis CI
 
 ## Tectonic
 
