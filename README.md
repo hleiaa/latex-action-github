@@ -107,7 +107,10 @@ The following Actions use Tectonic, which means they have the advantages and dis
 
 ### Using the Docker image directly
 
+Essentially this just executes `docker run --mount src=$GITHUB_WORKSPACE/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"` to compile `main.tex` in `src`.
 
+* Copy [.github/workflows/dxjoke-tectonic-docker.yml](.github/workflows/dxjoke-tectonic-docker.yml) to your repository, changing the source path and file to compile
+* Commit and push
 
 ### Compile LaTeX by vinay0410
 
