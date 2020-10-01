@@ -1,3 +1,4 @@
+# This workflow builds a pdf, and when a tag is pushed then the pdf is released to GitHub releases
 name: Release pdf on tag
 
 on: [push]
