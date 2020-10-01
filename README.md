@@ -153,6 +153,10 @@ Because it would be so much work figuring out what packages are needed, especial
 
 ### LaTeX linter (chktex) by j2kun
 
+## Uploading the pdf to a GitHub Release when a tag is pushed
+
+Basically see https://github.com/actions/upload-release-asset#example-workflow---upload-a-release-asset, example in this repo in [release-pdf-on-tag.yml](.github/workflows/release-pdf-on-tag.yml).
+
 # Overview and comparison of methods to build LaTeX using Travis CI
 
 ## Tectonic
