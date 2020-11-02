@@ -9,7 +9,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: Compile
-        run: docker run --mount src=$GITHUB_WORKSPACE/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"
+        run: docker run --mount src=$GITHUB_WORKSPACE/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic -w https://ttassets.z13.web.core.windows.net/tlextras-2020.0r0.tar main.tex"
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
