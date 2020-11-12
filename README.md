@@ -16,6 +16,13 @@ If you are looking for instructions to build LaTeX locally, look [here](https://
 If you are looking for instructions to build LaTeX on GitLab CI, have a look at the [GitLab](#gitlab) section.
 If you are looking for instructions to build ConTeXt, have a look at the [ConTeXt](#context) section.
 
+# Quickstart
+
+This repository contains a huge amount of information, and as you can see I have worked with a lot of different options.
+These are my two favourites:
+
+* For simple documents, I use [Tectonic via Docker](#gh-actions-docker).
+* For documents which Tectonic can't handle (think external programs like biblatex, minted, pythontex, ...) I use a [cached basic TeX Live installation with texliveonfly](#gh-actions-texlive).
 
 **Table of Contents**  
 
@@ -106,7 +113,7 @@ No known advantages currently.
 
 The following Actions use Tectonic, which means they have the advantages and disadvantages of Tectonic as described [below](#tectonic)
 
-### Using the Docker image directly
+### <a name="gh-actions-docker">Using the Docker image directly</a>
 
 Essentially this just executes `docker run --mount src=$GITHUB_WORKSPACE/src,target=/usr/src/tex,type=bind dxjoke/tectonic-docker /bin/sh -c "tectonic main.tex"` to compile `main.tex` in `src`.
 
@@ -130,6 +137,13 @@ Example in this repo: [vinay04010-docker-tectonic.yml](.github/disabled-workflow
 Build time example files: 4-5 min.
 
 ## TeX Live
+
+### <a name="gh-actions-texlive">Installing TeX Live directly</a>
+
+You can do basically the same as [4-texlive/.travis.yml](4-texlive/.travis.yml) for GitHub Actions.
+The workflow [.github/workflows/pythontex-example](.github/workflows/pythontex-example.yml) contains a full example of installing a basic TeX Live installation and using texliveonfly and caching to install the rest.
+It also contains the steps needed to automatically release a pdf to GitHub if you tag a commit, and also shows that it is easy to extend with other programs like pythontex.
+The complete time the GitHub Actions needs for an empty LaTeX file is only 20 seconds.
 
 ### paper-maker by andycasey using Ubuntu texlive packages
 
