@@ -26,7 +26,7 @@ jobs:
           root_file: ${{ steps.input_paths.outputs.ROOT_FILE }}
           working_directory: ${{ steps.input_paths.outputs.WORKING_DIR }}
           compiler: pdflatex
-          post_compile: pythontex ${{ steps.input_paths.outputs.ROOT_FILE }} && pdflatex ${{ steps.input_paths.outputs.ROOT_FILE }
+          post_compile: pythontex ${{ steps.input_paths.outputs.ROOT_FILE }} && pdflatex ${{ steps.input_paths.outputs.ROOT_FILE }}
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
