@@ -21,7 +21,9 @@ jobs:
       - name: Install and compile
         run: |
           sudo apt-get install python-pygments
-          python3 -m pip install numpy
+          pip3 install numpy
+          pip3 list
+          which python3 pip3
           cd 4-texlive/
           source ./texlive/texlive_install.sh
           cd ../src
