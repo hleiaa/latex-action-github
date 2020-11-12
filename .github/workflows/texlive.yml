@@ -18,11 +18,6 @@ jobs:
             /tmp/texlive
             $HOME/.texlive
           key: ${{ runner.os }}-texlive
-      - name: Set filename
-        id: input_paths
-        run: |
-          echo ::set-output name=ROOT_FILE::$FILE.tex
-          echo ::set-output name=WORKING_DIR::src
       - name: Install and compile
         run: |
           sudo apt-get install python-pygments
