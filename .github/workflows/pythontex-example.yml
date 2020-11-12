@@ -18,8 +18,8 @@ jobs:
       - name: Install
         run: |
           sudo apt-get install python-pygments
-          cd 4-texlive/texlive
-          source ./texlive_install.sh
+          cd 4-texlive/
+          source ./texlive/texlive_install.sh
       - name: Compile
         run: |
           cd src
