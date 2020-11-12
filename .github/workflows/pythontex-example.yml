@@ -10,11 +10,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Setup Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8.6
-          architecture: x64
       - name: Set filename
         id: input_paths
         run: |
@@ -26,7 +21,7 @@ jobs:
           root_file: ${{ steps.input_paths.outputs.ROOT_FILE }}
           working_directory: ${{ steps.input_paths.outputs.WORKING_DIR }}
           compiler: pdflatex
-          extra_system_packages: "py3-pygments"
+          extra_system_packages: "python3 py3-pygments"
           post_compile: pythontex ${{ steps.input_paths.outputs.ROOT_FILE }} && pdflatex ${{ steps.input_paths.outputs.ROOT_FILE }}
       - name: Upload pdf
         uses: actions/upload-artifact@v2
