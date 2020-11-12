@@ -23,6 +23,7 @@ jobs:
           compiler: pdflatex
       - name: Run pythontex
         run: |
+          tlmgr install pythontex
           cd src
           pythontex $FILE
       - name: Compile
