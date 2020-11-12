@@ -1,4 +1,4 @@
-name: pythontex-example
+name: texlive
 on: push
 
 env:

@@ -16,7 +16,7 @@ If you are looking for instructions to build LaTeX locally, look [here](https://
 If you are looking for instructions to build LaTeX on GitLab CI, have a look at the [GitLab](#gitlab) section.
 If you are looking for instructions to build ConTeXt, have a look at the [ConTeXt](#context) section.
 
-# Quickstart
+## Quickstart
 
 This repository contains a huge amount of information, and as you can see I have worked with a lot of different options.
 These are my two favourites:
@@ -24,7 +24,7 @@ These are my two favourites:
 * For simple documents, I use [Tectonic via Docker](#gh-actions-docker).
 * For documents which Tectonic can't handle (think external programs like biblatex, minted, pythontex, ...) I use a [cached basic TeX Live installation with texliveonfly](#gh-actions-texlive).
 
-**Table of Contents**  
+## Table of Contents
 
 - [GitHub Actions](#github-actions)
 - [Choose your build method](#choose-your-build-method)
@@ -141,9 +141,13 @@ Build time example files: 4-5 min.
 ### <a name="gh-actions-texlive">Installing TeX Live directly</a>
 
 You can do basically the same as [4-texlive/.travis.yml](4-texlive/.travis.yml) for GitHub Actions.
-The workflow [.github/workflows/pythontex-example](.github/workflows/pythontex-example.yml) contains a full example of installing a basic TeX Live installation and using texliveonfly and caching to install the rest.
+The workflow [.github/workflows/texlive.yml](.github/workflows/texlive.yml) contains a full example of installing a basic TeX Live installation and using texliveonfly and caching to install the rest.
 It also contains the steps needed to automatically release a pdf to GitHub if you tag a commit, and also shows that it is easy to extend with other programs like pythontex.
 The complete time the GitHub Actions needs for an empty LaTeX file is only 20 seconds.
+
+The steps to use this are then:
+* Copy the texlive folder in [4-texlive](4-texlive) to your project
+* Copy the workflow file [.github/workflows/texlive.yml](.github/workflows/texlive.yml), read it through and change all the paths
 
 ### paper-maker by andycasey using Ubuntu texlive packages
 
