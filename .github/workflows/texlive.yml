@@ -21,17 +21,22 @@ jobs:
       - name: Install and compile
         run: |
           sudo apt-get install python-pygments
+          pip3 install numpy
           cd 4-texlive/
           source ./texlive/texlive_install.sh
           cd ../src
           texliveonfly $FILE.tex
           pythontex $FILE
           pdflatex $FILE.tex
+      - name: Set filename
+        id: output_file
+        run: |
+          echo ::set-output name=OUTPUT_FILE::src/$FILE.pdf
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
           name: pythontex-example.zip
-          path: src/*.pdf
+          path: ${{ steps.output_file.outputs.OUTPUT_FILE }}
       - name: Create Release
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
         id: create_release
