@@ -15,15 +15,20 @@ jobs:
         with:
           python-version: 3.8.6
           architecture: x64
+      - name: Set filename
+        id: input_paths
+        run: |
+          echo ::set-output name=ROOT_FILE::$FILE.tex
+          echo ::set-output name=WORKING_DIR::src
       - name: Compile
         uses: xu-cheng/latex-action@master
         with:
-          root_file: pythontex-example.tex
-          working_directory: src/
+          root_file: ${{ steps.input_paths.outputs.ROOT_FILE }}
+          working_directory: ${{ steps.input_paths.outputs.WORKING_DIR }}
           compiler: pdflatex
+          pre_compile: tlmgr install pythontex
       - name: Run pythontex
         run: |
-          tlmgr install pythontex
           cd src
           pythontex $FILE
       - name: Compile
