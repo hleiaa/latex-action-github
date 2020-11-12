@@ -25,10 +25,8 @@ jobs:
           architecture: x64
       - name: Install and compile
         run: |
+          sudo apt-get install python-pygments
           pip install numpy
-          pip list
-          which python pip
-          python -c 'import numpy'
           cd 4-texlive/
           source ./texlive/texlive_install.sh
           cd ../src
