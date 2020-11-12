@@ -15,14 +15,12 @@ jobs:
         run: |
           echo ::set-output name=ROOT_FILE::$FILE.tex
           echo ::set-output name=WORKING_DIR::src
-      - name: Install
+      - name: Install and compile
         run: |
           sudo apt-get install python-pygments
           cd 4-texlive/
           source ./texlive/texlive_install.sh
-      - name: Compile
-        run: |
-          cd src
+          cd ../src
           texliveonfly pythontex-example.tex
           pythontex pythontex-example
           latexmk pythontex-example.tex
