@@ -29,13 +29,13 @@ jobs:
           cd 4-texlive/
           source ./texlive/texlive_install.sh
           cd ../src
-          texliveonfly pythontex-example.tex
-          pythontex pythontex-example
-          pdflatex pythontex-example.tex
+          texliveonfly $FILE.tex
+          pythontex $FILE
+          pdflatex $FILE.tex
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
-          name: $FILE.zip
+          name: pythontex-example.zip
           path: src/*.pdf
       - name: Create Release
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
