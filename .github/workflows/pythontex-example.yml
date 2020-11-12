@@ -1,11 +1,11 @@
-name: CI
+name: pythontex-example
 on: push
 
 env:
   FILE: pythontex-example
 
 jobs:
-  latex:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,7 +18,7 @@ jobs:
       - name: Compile
         uses: xu-cheng/latex-action@master
         with:
-          root_file: $FILE.tex
+          root_file: pythontex-example.tex
           working_directory: src/
           compiler: pdflatex
       - name: Run pythontex
