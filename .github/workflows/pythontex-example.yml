@@ -10,6 +10,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+      - name: Cache installation
+        id: cache-texlive
+        uses: actions/cache@v2
+        with:
+          path: |
+            /tmp/texlive
+            $HOME/.texlive
+          key: ${{ runner.os }}-texlive
       - name: Set filename
         id: input_paths
         run: |
@@ -23,7 +31,7 @@ jobs:
           cd ../src
           texliveonfly pythontex-example.tex
           pythontex pythontex-example
-          latexmk pythontex-example.tex
+          pdflatex pythontex-example.tex
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
