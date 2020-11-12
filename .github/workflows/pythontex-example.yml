@@ -15,14 +15,16 @@ jobs:
         run: |
           echo ::set-output name=ROOT_FILE::$FILE.tex
           echo ::set-output name=WORKING_DIR::src
+      - name: Install
+        run: |
+          sudo apt-get install python-pygments
+          source ./4-texlive/texlive/texlive_install.sh
       - name: Compile
-        uses: xu-cheng/latex-action@master
-        with:
-          root_file: ${{ steps.input_paths.outputs.ROOT_FILE }}
-          working_directory: ${{ steps.input_paths.outputs.WORKING_DIR }}
-          compiler: pdflatex
-          extra_system_packages: "python3 py3-pygments"
-          post_compile: pythontex ${{ steps.input_paths.outputs.ROOT_FILE }} && pdflatex ${{ steps.input_paths.outputs.ROOT_FILE }}
+        run: |
+          cd src
+          texliveonfly pythontex-example.tex
+          pythontex pythontex-example
+          latexmk pythontex-example.tex
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
