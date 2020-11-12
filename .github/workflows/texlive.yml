@@ -26,7 +26,7 @@ jobs:
           source ./texlive/texlive_install.sh
           cd ../src
           texliveonfly $FILE.tex
-          pythontex $FILE
+          pythontex --interpreter python3 $FILE
           pdflatex $FILE.tex
       - name: Set filename
         id: output_file
