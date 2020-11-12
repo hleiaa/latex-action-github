@@ -18,17 +18,22 @@ jobs:
             /tmp/texlive
             $HOME/.texlive
           key: ${{ runner.os }}-texlive
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8.6
+          architecture: x64
       - name: Install and compile
         run: |
-          sudo apt-get install python-pygments
-          pip3 install numpy
-          pip3 list
-          which python3 pip3
+          pip install numpy
+          pip list
+          which python pip
+          python -c 'import numpy'
           cd 4-texlive/
           source ./texlive/texlive_install.sh
           cd ../src
           texliveonfly $FILE.tex
-          pythontex --interpreter python:python3 $FILE
+          pythontex $FILE
           pdflatex $FILE.tex
       - name: Set filename
         id: output_file
