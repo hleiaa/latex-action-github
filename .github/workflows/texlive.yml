@@ -20,9 +20,9 @@ jobs:
           key: ${{ runner.os }}-texlive
       # Only required for pythontex
       - name: Setup Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
-          python-version: 3.8.6
+          python-version: 3.x
           architecture: x64
       - name: Install and compile
         run: |
