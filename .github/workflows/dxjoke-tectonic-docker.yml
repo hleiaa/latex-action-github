@@ -1,6 +1,10 @@
 name: dxjoke Tectonic Docker
 
-on: [push]
+on:
+  push:
+  # NOTE: only for testing purposes in this repository
+  schedule:
+    - cron: 0 0 * * 1
 
 jobs:
   build:
