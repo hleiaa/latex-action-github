@@ -1,0 +1,36 @@
+name: setup-tectonic action
+
+on:
+  push:
+  # NOTE: only for testing purposes in this repository
+  schedule:
+    - cron: 0 0 * * 1
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Export Tectonic cache path
+        run: echo TECTONIC_CACHE_PATH=$HOME/.cache/Tectonic >> $GITHUB_ENV
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        name: Tectonic Cache
+        with:
+          path: ${{ env.TECTONIC_CACHE_PATH }}
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Tectonic
+        run: |
+          cd src
+          tectonic main.tex
+      - name: Upload pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: main
+          path: main.pdf
