@@ -127,10 +127,11 @@ Build time example file: 30s
 
 Documentation and source: https://github.com/wtfjoke/setup-tectonic
 This is based on the previous docker image, but packaged in a GitHub Action.
-It also supports caching and uploading pdf artifacts.
+It has a significant advantage over using the Docker image directly: it supports caching of installed LaTeX packages so it is significantly faster for documents with many dependencies.
+
 Example in this repo: [.github/workflows/setup-tectonic-action.yml](.github/workflows/setup-tectonic-action.yml)
 
-Build time example file: 30s
+Build time example file: 20s
 
 ### Compile LaTeX by vinay0410
 
