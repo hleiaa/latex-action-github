@@ -130,7 +130,7 @@ This is based on the previous docker image, but packaged in a GitHub Action.
 It also supports caching and uploading pdf artifacts.
 Example in this repo: [.github/workflows/setup-tectonic-action.yml](.github/workflows/setup-tectonic-action.yml)
 
-Build time example file: 60s
+Build time example file: 30s
 
 ### Compile LaTeX by vinay0410
 
