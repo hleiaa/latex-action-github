@@ -121,12 +121,16 @@ Essentially this just executes `docker run --mount src=$GITHUB_WORKSPACE/src,tar
 * Copy [.github/workflows/dxjoke-tectonic-docker.yml](.github/workflows/dxjoke-tectonic-docker.yml) to your repository, changing the source path and file to compile
 * Commit and push
 
+Build time example file: 30s
+
 ### setup-tectonic by WtfJoke
 
 Documentation and source: https://github.com/wtfjoke/setup-tectonic
 This is based on the previous docker image, but packaged in a GitHub Action.
 It also supports caching and uploading pdf artifacts.
 Example in this repo: [.github/workflows/setup-tectonic-action.yml](.github/workflows/setup-tectonic-action.yml)
+
+Build time example file: 60s
 
 ### Compile LaTeX by vinay0410
 
