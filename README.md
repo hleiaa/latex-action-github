@@ -5,6 +5,7 @@
 ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/Github%20Action%20for%20LaTeX%20by%20xu-cheng/badge.svg)
 ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/Compile%20a%20ConTeXt%20document/badge.svg)
 ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/dxjoke%20Tectonic%20Docker/badge.svg)
+![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/setup-tectonic%20action/badge.svg)
 <!-- ![](https://github.com/PHPirates/travis-ci-latex-pdf/workflows/Compile%20LaTeX%20by%20vinay0410/badge.svg) -->
 
 Write LaTeX, push to git, let Travis automatically build your file and release a pdf automatically to GitHub releases when the commit was tagged.
@@ -119,6 +120,13 @@ Essentially this just executes `docker run --mount src=$GITHUB_WORKSPACE/src,tar
 
 * Copy [.github/workflows/dxjoke-tectonic-docker.yml](.github/workflows/dxjoke-tectonic-docker.yml) to your repository, changing the source path and file to compile
 * Commit and push
+
+### setup-tectonic by WtfJoke
+
+Documentation and source: https://github.com/wtfjoke/setup-tectonic
+This is based on the previous docker image, but packaged in a GitHub Action.
+It also supports caching and uploading pdf artifacts.
+Example in this repo: [.github/workflows/setup-tectonic-action.yml](.github/workflows/setup-tectonic-action.yml)
 
 ### Compile LaTeX by vinay0410
 
