@@ -125,9 +125,9 @@ Build time example file: 30s
 
 ### setup-tectonic by WtfJoke
 
-Documentation and source: https://github.com/wtfjoke/setup-tectonic
-This is based on the previous docker image, but packaged in a GitHub Action.
+This Github Action downloads tectonic (and optionally biber) from the latest official releases.
 It has a significant advantage over using the Docker image directly: it supports caching of installed LaTeX packages so it is significantly faster for documents with many dependencies.
+For the documentation and more explanation (including one about the cache) see https://github.com/wtfjoke/setup-tectonic
 
 Example in this repo: [.github/workflows/setup-tectonic-action.yml](.github/workflows/setup-tectonic-action.yml)
 
