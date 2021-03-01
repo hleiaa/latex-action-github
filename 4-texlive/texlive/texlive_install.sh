@@ -2,9 +2,7 @@
 
 # Originally from https://github.com/latex3/latex3
 
-# This script is used for building LaTeX files using Travis
-# A minimal current TL is installed adding only the packages that are
-# required
+# A minimal current TL is installed adding only the packages that are required
 
 # See if there is a cached version of TL available
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
@@ -19,6 +17,9 @@ if ! command -v texlua > /dev/null; then
 
   cd ..
 fi
+
+# Sometimes tlmgr needs to be updated before we can install packages
+tlmgr update --self
 
 # Just including texlua so the cache check above works
 tlmgr install luatex
