@@ -21,7 +21,7 @@ jobs:
           path: |
             /tmp/texlive
             $HOME/.texlive
-          key: ${{ runner.os }}-texlive
+          key: ${{ runner.os }}-texlive-2021
       # Only required for pythontex
       - name: Setup Python
         uses: actions/setup-python@v2
