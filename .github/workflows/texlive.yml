@@ -1,9 +1,5 @@
 name: texlive
-on:
-  push:
-  # NOTE: only for testing purposes in this repository
-  schedule:
-    - cron: 0 0 * * 1
+on: push
 
 env:
   FILE: pythontex-example

@@ -1,10 +1,6 @@
 name: setup-tectonic action
 
-on:
-  push:
-  # NOTE: only for testing purposes in this repository
-  schedule:
-    - cron: 0 0 * * 1
+on: push
 
 jobs:
   build:
